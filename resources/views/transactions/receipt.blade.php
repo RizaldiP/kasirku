@@ -129,7 +129,7 @@
 <body>
     <div class="receipt">
         <div class="receipt-header">
-            <h1>Kasirku</h1>
+            <h1>{{ $storeName }}</h1>
             <p>{{ __('Payment Receipt') }}</p>
         </div>
         <div class="receipt-body">
@@ -216,11 +216,11 @@
     <div class="actions no-print">
         <button onclick="window.print()" class="btn-print"><i class="bi bi-printer"></i> {{ __('Print') }}</button>
         <a href="{{ route('transactions.receipt-pdf', $transaction) }}" class="btn-pdf"><i class="bi bi-filetype-pdf"></i> {{ __('Download PDF') }}</a>
-        <a href="https://wa.me/?text={{ urlencode(__('Thank you for shopping at Kasirku!') . "\n" . __('Invoice') . ': ' . $transaction->invoice_number . "\n" . __('Total') . ': Rp' . number_format($transaction->total_price, 0, ',', '.') . "\n" . __('Date') . ': ' . $transaction->created_at->format('d/m/Y H:i')) }}" target="_blank" class="btn-wa"><i class="bi bi-whatsapp"></i> {{ __('Share WhatsApp') }}</a>
+        <a href="https://wa.me/?text={{ urlencode(__('Thank you for shopping at') . ' ' . $storeName . '!' . "\n" . __('Invoice') . ': ' . $transaction->invoice_number . "\n" . __('Total') . ': Rp' . number_format($transaction->total_price, 0, ',', '.') . "\n" . __('Date') . ': ' . $transaction->created_at->format('d/m/Y H:i')) }}" target="_blank" class="btn-wa"><i class="bi bi-whatsapp"></i> {{ __('Share WhatsApp') }}</a>
         <button onclick="window.close()" class="btn-back"><i class="bi bi-x-lg"></i> {{ __('Close') }}</button>
     </div>
 
-    <div class="watermark">{{ __('Created by Kasirku') }}</div>
+    <div class="watermark">{{ __('Created by') }} {{ $storeName }}</div>
 
     @if (!request()->has('pdf'))
     <script>

@@ -23,8 +23,9 @@ class TransactionController extends Controller
         $pointsEarnPerAmount = (int) \App\Models\Setting::get('points_earn_per_amount', 10000);
         $pointsRedeemPerDiscount = (int) \App\Models\Setting::get('points_redeem_per_discount', 100);
         $pointsDiscountPerUnit = (int) \App\Models\Setting::get('points_discount_per_unit', 2000);
+        $storeName = \App\Models\Setting::get('store_name', 'Kasirku');
         return view('transactions.pos', compact(
-            'products', 'qrisExists',
+            'products', 'qrisExists', 'storeName',
             'pointsEarnPerAmount', 'pointsRedeemPerDiscount', 'pointsDiscountPerUnit',
         ));
     }
@@ -233,19 +234,22 @@ class TransactionController extends Controller
     public function show(Transaction $transaction)
     {
         $transaction->load('cashier', 'details.product', 'member');
-        return view('transactions.show', compact('transaction'));
+        $storeName = \App\Models\Setting::get('store_name', 'Kasirku');
+        return view('transactions.show', compact('transaction', 'storeName'));
     }
 
     public function receipt(Transaction $transaction)
     {
         $transaction->load('cashier', 'details.product', 'member');
-        return view('transactions.receipt', compact('transaction'));
+        $storeName = \App\Models\Setting::get('store_name', 'Kasirku');
+        return view('transactions.receipt', compact('transaction', 'storeName'));
     }
 
     public function receiptPdf(Transaction $transaction)
     {
         $transaction->load('cashier', 'details.product', 'member');
-        $html = view('transactions.receipt', compact('transaction') + ['pdfMode' => true])->render();
+        $storeName = \App\Models\Setting::get('store_name', 'Kasirku');
+        $html = view('transactions.receipt', compact('transaction', 'storeName') + ['pdfMode' => true])->render();
         $pdf = Pdf::loadHTML($html);
         $pdf->setPaper([0, 0, 240, 700]);
         return $pdf->download('invoice-' . $transaction->invoice_number . '.pdf');

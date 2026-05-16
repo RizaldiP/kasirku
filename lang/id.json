@@ -145,7 +145,7 @@
     "Configure how member points work.": "Konfigurasi cara kerja poin member.",
     "Create your own QR code.": "Buat QR code Anda sendiri.",
     "Created": "Dibuat",
-    "Created by Kasirku": "Dibuat oleh Kasirku",
+    "Created by": "Dibuat oleh",
     "Customer name": "Nama pelanggan",
     "Customer WhatsApp number": "Nomor WhatsApp pelanggan",
     "Customers will earn points on every purchase.": "Pelanggan akan mendapatkan poin setiap pembelian.",
@@ -198,7 +198,7 @@
     "Start": "Mulai",
     "Store name or link": "Nama toko atau link",
     "Thank You": "Terima Kasih",
-    "Thank you for shopping at Kasirku!": "Terima kasih telah berbelanja di Kasirku!",
+    "Thank you for shopping at": "Terima kasih telah berbelanja di",
     "This is not an official QRIS, just a regular QR code.": "Ini bukan QRIS resmi, hanya QR code biasa.",
     "Time": "Waktu",
     "Total Points Discount": "Total Diskon Poin",
@@ -234,5 +234,13 @@
     "User deleted": "Pengguna berhasil dihapus",
     "products": "produk",
     "points discount": "poin diskon",
-    "period": "Periode"
+    "period": "Periode",
+    "Store Settings": "Pengaturan Toko",
+    "Store Name": "Nama Toko",
+    "Store Logo": "Logo Toko",
+    "Upload Logo": "Unggah Logo",
+    "Change Logo": "Ganti Logo",
+    "The name will appear in the navbar, receipt, and POS page.": "Nama akan muncul di navbar, struk, dan halaman POS.",
+    "Upload a logo image (PNG\/JPG, max 2MB). Recommended size: 64x64 px.": "Unggah gambar logo (PNG\/JPG, maks 2MB). Ukuran yang disarankan: 64x64 piksel.",
+    "Store settings saved successfully.": "Pengaturan toko berhasil disimpan."
 }

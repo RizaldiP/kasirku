@@ -12,7 +12,7 @@
             <a href="{{ route('transactions.receipt-pdf', $transaction) }}" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 text-white font-medium rounded-xl gradient-danger btn-scale">
                 <i class="bi bi-filetype-pdf"></i> {{ __('Download PDF') }}
             </a>
-            <a href="https://wa.me/?text={{ urlencode(__('Thank you for shopping at Kasirku!') . "\n" . __('Invoice') . ': ' . $transaction->invoice_number . "\n" . __('Total') . ': Rp' . number_format($transaction->total_price, 0, ',', '.') . "\n" . __('Date') . ': ' . $transaction->created_at->format('d/m/Y H:i')) }}" target="_blank" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 text-white font-medium rounded-xl btn-scale" style="background:#25d366">
+            <a href="https://wa.me/?text={{ urlencode(__('Thank you for shopping at') . ' ' . $storeName . '!' . "\n" . __('Invoice') . ': ' . $transaction->invoice_number . "\n" . __('Total') . ': Rp' . number_format($transaction->total_price, 0, ',', '.') . "\n" . __('Date') . ': ' . $transaction->created_at->format('d/m/Y H:i')) }}" target="_blank" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 text-white font-medium rounded-xl btn-scale" style="background:#25d366">
                 <i class="bi bi-whatsapp"></i> {{ __('Share WhatsApp') }}
             </a>
             <a href="{{ route('transactions.pos') }}" class="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-4 py-2.5 text-white font-medium rounded-xl gradient-success btn-scale">

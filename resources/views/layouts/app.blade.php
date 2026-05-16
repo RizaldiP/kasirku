@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', __('Kasirku'))</title>
+    <title>@yield('title', $storeName)</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="dark-mode" content="{{ session('_dark_mode', false) ? '1' : '0' }}">
     @vite('resources/css/app.css')
@@ -174,8 +174,14 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
                 <a href="/" class="text-xl font-bold text-white flex items-center gap-2 flex-shrink-0">
-                    <span class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm">K</span>
-                    {{ __('Kasirku') }}
+                    @if ($storeLogo)
+                        <div class="w-8 h-8 rounded-lg overflow-hidden flex-shrink-0 bg-white/20 flex items-center justify-center">
+                            <img src="{{ $storeLogo }}?v={{ time() }}" alt="" class="w-full h-full object-cover">
+                        </div>
+                    @else
+                        <span class="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center text-sm flex-shrink-0">{{ substr($storeName, 0, 1) }}</span>
+                    @endif
+                    <span class="truncate max-w-[160px]">{{ $storeName }}</span>
                 </a>
                 <button id="navbarToggle" class="lg:hidden p-2 rounded-lg text-white/80 hover:text-white hover:bg-white/10 focus:outline-none" aria-label="Toggle menu">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -263,6 +269,12 @@
                                     <li>
                                         <a href="{{ route('settings.points') }}" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-amber-50 hover:text-amber-700 transition-all dark:text-slate-200 dark:hover:bg-slate-700">
                                             <i class="bi bi-star"></i> {{ __('Points Settings') }}
+                                        </a>
+                                    </li>
+                                    <li><hr class="mx-3 border-gray-100 dark:border-slate-700"></li>
+                                    <li>
+                                        <a href="{{ route('settings.store') }}" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-purple-50 hover:text-purple-700 transition-all dark:text-slate-200 dark:hover:bg-slate-700">
+                                            <i class="bi bi-shop"></i> {{ __('Store Settings') }}
                                         </a>
                                     </li>
                                     <li><hr class="mx-3 border-gray-100 dark:border-slate-700"></li>

@@ -169,4 +169,27 @@ class DashboardController extends Controller
 
         return redirect()->route('settings.points')->with('success', 'Pengaturan poin berhasil disimpan.');
     }
+
+    public function storeSettings()
+    {
+        $storeName = Setting::get('store_name', 'Kasirku');
+        $logoExists = file_exists(public_path('storage/logo.png'));
+        return view('settings.store', compact('storeName', 'logoExists'));
+    }
+
+    public function storeUpdate(Request $request)
+    {
+        $request->validate([
+            'store_name' => 'required|string|max:255',
+            'logo' => 'nullable|image|mimes:png,jpg,jpeg|max:2048',
+        ]);
+
+        Setting::set('store_name', $request->store_name);
+
+        if ($request->hasFile('logo')) {
+            $request->file('logo')->move(public_path('storage'), 'logo.png');
+        }
+
+        return redirect()->route('settings.store')->with('success', __('Store settings saved successfully.'));
+    }
 }

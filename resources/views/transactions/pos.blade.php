@@ -685,7 +685,7 @@ function shareWa() {
     var num = document.getElementById('waNumber').value.replace(/\D/g, '');
     if (num.length < 8) { alert('Masukkan nomor WhatsApp pelanggan dengan benar'); return; }
     if (num.startsWith('0')) num = '62' + num.slice(1);
-    var msg = encodeURIComponent('{{ __("Thank you for shopping at Kasirku!") }}\n{{ __("Invoice") }}: ' + lastInvoice + '\n{{ __("Total") }}: Rp' + lastTotal + '\n{{ __("Date") }}: ' + lastDate);
+    var msg = encodeURIComponent('{{ __("Thank you for shopping at") }} {{ $storeName }}!\n{{ __("Invoice") }}: ' + lastInvoice + '\n{{ __("Total") }}: Rp' + lastTotal + '\n{{ __("Date") }}: ' + lastDate);
     downloadPdf();
     window.open('https://wa.me/' + num + '?text=' + msg, '_blank');
     closeModal('successModal');

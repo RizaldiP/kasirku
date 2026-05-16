@@ -10,7 +10,8 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        return view('auth.login');
+        $storeName = \App\Models\Setting::get('store_name', 'Kasirku');
+        return view('auth.login', compact('storeName'));
     }
 
     public function login(Request $request)

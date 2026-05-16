@@ -77,7 +77,7 @@
         <div class="flex flex-col items-center gap-4">
           <div class="w-full max-w-sm">
             <label class="text-sm font-medium text-gray-700 dark:text-slate-300 mb-1 block">{{ __('Enter text for QR code') }}</label>
-            <input type="text" id="qrText" value="{{ config('app.name', 'Kasirku') }}" placeholder="{{ __('Store name or link') }}..." class="w-full px-4 py-2.5 border border-gray-300 rounded-xl input-focus text-sm">
+            <input type="text" id="qrText" value="{{ \App\Models\Setting::get('store_name', 'Kasirku') }}" placeholder="{{ __('Store name or link') }}..." class="w-full px-4 py-2.5 border border-gray-300 rounded-xl input-focus text-sm">
           </div>
           <div class="flex gap-2">
             <button onclick="generateQr()" class="py-2 px-6 gradient-purple text-white font-medium rounded-xl btn-scale"><i class="bi bi-magic me-1"></i> {{ __('Generate') }}</button>

@@ -146,7 +146,7 @@
     "Configure how member points work.": "Configure how member points work.",
     "Create your own QR code.": "Create your own QR code.",
     "Created": "Created",
-    "Created by Kasirku": "Created by Kasirku",
+    "Created by": "Created by",
     "Customer name": "Customer name",
     "Customer WhatsApp number": "Customer WhatsApp number",
     "Customers will earn points on every purchase.": "Customers will earn points on every purchase.",
@@ -199,7 +199,7 @@
     "Start": "Start",
     "Store name or link": "Store name or link",
     "Thank You": "Thank You",
-    "Thank you for shopping at Kasirku!": "Thank you for shopping at Kasirku!",
+    "Thank you for shopping at": "Thank you for shopping at",
     "This is not an official QRIS, just a regular QR code.": "This is not an official QRIS, just a regular QR code.",
     "Time": "Time",
     "Total Points Discount": "Total Points Discount",
@@ -234,5 +234,13 @@
     "User deleted": "User deleted",
     "products": "products",
     "points discount": "points discount",
-    "period": "Period"
+    "period": "Period",
+    "Store Settings": "Store Settings",
+    "Store Name": "Store Name",
+    "Store Logo": "Store Logo",
+    "Upload Logo": "Upload Logo",
+    "Change Logo": "Change Logo",
+    "The name will appear in the navbar, receipt, and POS page.": "The name will appear in the navbar, receipt, and POS page.",
+    "Upload a logo image (PNG\/JPG, max 2MB). Recommended size: 64x64 px.": "Upload a logo image (PNG\/JPG, max 2MB). Recommended size: 64x64 px.",
+    "Store settings saved successfully.": "Store settings saved successfully."
 }

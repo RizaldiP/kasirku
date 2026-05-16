@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>{{ __('Login') }} - Kasirku</title>
+    <title>{{ __('Login') }} - {{ $storeName }}</title>
     @vite('resources/css/app.css')
     <style>
         .dark body { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #0f172a 100%) !important; }
@@ -29,7 +29,7 @@
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                 </svg>
             </div>
-            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">Kasirku</h1>
+            <h1 class="text-3xl font-extrabold bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-500 bg-clip-text text-transparent">{{ $storeName }}</h1>
             <p class="text-gray-500 mt-1 text-sm">{{ __('Sign in to your account') }}</p>
         </div>
 
@@ -96,7 +96,7 @@
             </div>
         </div>
 
-        <p class="text-center mt-8 text-gray-400 text-xs">&copy; {{ date('Y') }} Kasirku. All rights reserved.</p>
+        <p class="text-center mt-8 text-gray-400 text-xs">&copy; {{ date('Y') }} {{ $storeName }}.</p>
     </div>
     <script>
         var _darkMode = localStorage.getItem('darkMode') === '1';

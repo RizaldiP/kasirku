@@ -74,5 +74,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/settings/points', [DashboardController::class, 'pointsSettings'])->name('settings.points');
         Route::post('/settings/points', [DashboardController::class, 'pointsUpdate'])->name('settings.points.update');
+
+        Route::get('/settings/store', [DashboardController::class, 'storeSettings'])->name('settings.store');
+        Route::post('/settings/store', [DashboardController::class, 'storeUpdate'])->name('settings.store.update');
     });
 });

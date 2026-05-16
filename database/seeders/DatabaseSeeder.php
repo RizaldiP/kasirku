@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Setting;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
@@ -13,6 +14,11 @@ class DatabaseSeeder extends Seeder
 
     public function run(): void
     {
+        Setting::set('store_name', 'Toko Kita');
+        Setting::set('points_earn_per_amount', '10000');
+        Setting::set('points_redeem_per_discount', '100');
+        Setting::set('points_discount_per_unit', '2000');
+
         User::create([
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
