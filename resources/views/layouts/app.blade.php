@@ -196,6 +196,7 @@
                                 <li><a href="{{ route('dashboard.admin') }}" class="block px-3 py-2 rounded-lg lg:text-white/80 text-gray-700 lg:hover:text-white hover:text-indigo-600 lg:hover:bg-white/10 hover:bg-indigo-50 transition-all dark:text-slate-200 dark:hover:bg-slate-700">{{ __('Dashboard') }}</a></li>
                                 <li><a href="{{ route('members.index') }}" class="block px-3 py-2 rounded-lg lg:text-white/80 text-gray-700 lg:hover:text-white hover:text-indigo-600 lg:hover:bg-white/10 hover:bg-indigo-50 transition-all dark:text-slate-200 dark:hover:bg-slate-700">{{ __('Members') }}</a></li>
                                 <li><a href="{{ route('users.index') }}" class="block px-3 py-2 rounded-lg lg:text-white/80 text-gray-700 lg:hover:text-white hover:text-indigo-600 lg:hover:bg-white/10 hover:bg-indigo-50 transition-all dark:text-slate-200 dark:hover:bg-slate-700">{{ __('Users') }}</a></li>
+                                <li><a href="{{ route('letters.index') }}" class="block px-3 py-2 rounded-lg lg:text-white/80 text-gray-700 lg:hover:text-white hover:text-indigo-600 lg:hover:bg-white/10 hover:bg-indigo-50 transition-all dark:text-slate-200 dark:hover:bg-slate-700"><i class="bi bi-file-text me-1"></i>{{ __('Letters') }}</a></li>
                             @endif
                         @endauth
                     </ul>

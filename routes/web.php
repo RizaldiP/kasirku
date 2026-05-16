@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\LetterController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\TransactionController;
@@ -77,5 +78,8 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/settings/store', [DashboardController::class, 'storeSettings'])->name('settings.store');
         Route::post('/settings/store', [DashboardController::class, 'storeUpdate'])->name('settings.store.update');
+
+        Route::resource('letters', LetterController::class);
+        Route::get('/letters/{letter}/export-word', [LetterController::class, 'exportWord'])->name('letters.export-word');
     });
 });
