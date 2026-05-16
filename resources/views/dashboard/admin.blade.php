@@ -300,27 +300,23 @@
 @endsection
 
 @push('scripts')
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <script>
-document.addEventListener('turbo:load', function initCharts() {
-    if (typeof Chart === 'undefined') return;
-    var dc = document.getElementById('dailyChart');
-    var mc = document.getElementById('monthlyChart');
-    if (dc && !dc.chart) dc.chart = new Chart(dc, {
-        type: 'bar',
-        data: {
-            labels: {!! json_encode($dailyLabels) !!},
-            datasets: [{ label: '{{ __("Total Revenue") }} (Rp)', data: {!! json_encode($dailyData) !!}, backgroundColor: 'rgba(59, 130, 246, 0.5)', borderColor: 'rgb(59, 130, 246)', borderWidth: 1 }]
-        },
-        options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => 'Rp' + v.toLocaleString('id-ID') } } } }
-    });
-    if (mc && !mc.chart) mc.chart = new Chart(mc, {
-        type: 'line',
-        data: {
-            labels: {!! json_encode($monthlyLabels) !!},
-            datasets: [{ label: '{{ __("Total Revenue") }} (Rp)', data: {!! json_encode($monthlyData) !!}, borderColor: 'rgb(16, 185, 129)', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.3 }]
-        },
-        options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => 'Rp' + v.toLocaleString('id-ID') } } } }
-    });
+new Chart(document.getElementById('dailyChart'), {
+    type: 'bar',
+    data: {
+        labels: {!! json_encode($dailyLabels) !!},
+        datasets: [{ label: '{{ __("Total Revenue") }} (Rp)', data: {!! json_encode($dailyData) !!}, backgroundColor: 'rgba(59, 130, 246, 0.5)', borderColor: 'rgb(59, 130, 246)', borderWidth: 1 }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => 'Rp' + v.toLocaleString('id-ID') } } } }
+});
+new Chart(document.getElementById('monthlyChart'), {
+    type: 'line',
+    data: {
+        labels: {!! json_encode($monthlyLabels) !!},
+        datasets: [{ label: '{{ __("Total Revenue") }} (Rp)', data: {!! json_encode($monthlyData) !!}, borderColor: 'rgb(16, 185, 129)', backgroundColor: 'rgba(16, 185, 129, 0.1)', fill: true, tension: 0.3 }]
+    },
+    options: { responsive: true, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, ticks: { callback: v => 'Rp' + v.toLocaleString('id-ID') } } } }
 });
 </script>
 @endpush

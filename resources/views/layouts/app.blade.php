@@ -7,8 +7,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="dark-mode" content="{{ session('_dark_mode', false) ? '1' : '0' }}">
     @vite('resources/css/app.css')
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
     <style>
         body {
             background: linear-gradient(135deg, #f0f4ff 0%, #fdf2f8 50%, #f0fdf4 100%);
@@ -244,13 +242,13 @@
                                 </button>
                                 <ul class="dropdown-menu hidden absolute right-0 mt-1 w-56 bg-white rounded-xl shadow-lg border border-gray-100 py-1 z-50 dark:bg-slate-800 dark:border-slate-700">
                                     <li>
-                                        <a href="javascript:void(0)" onclick="toggleDarkMode()" data-turbo="false" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition-all dark:text-slate-200 dark:hover:bg-slate-700">
+                                        <a href="javascript:void(0)" onclick="toggleDarkMode()" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition-all dark:text-slate-200 dark:hover:bg-slate-700">
                                             <i class="bi {{ session('_dark_mode', false) ? 'bi-sun' : 'bi-moon' }}" id="darkModeIcon"></i>
                                             <span id="darkModeLabel">{{ session('_dark_mode', false) ? __('Light Mode') : __('Dark Mode') }}</span>
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="{{ route('language.switch', app()->getLocale() === 'id' ? 'en' : 'id') }}" data-turbo="false" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition-all dark:text-slate-200 dark:hover:bg-slate-700">
+                                        <a href="{{ route('language.switch', app()->getLocale() === 'id' ? 'en' : 'id') }}" class="flex items-center gap-2 w-full px-4 py-2.5 text-sm text-gray-700 hover:bg-indigo-50 hover:text-indigo-700 transition-all dark:text-slate-200 dark:hover:bg-slate-700">
                                             <i class="bi bi-translate"></i>
                                             {{ app()->getLocale() === 'id' ? 'English' : 'Bahasa Indonesia' }}
                                         </a>

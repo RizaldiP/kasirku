@@ -96,7 +96,6 @@
 
 @push('scripts')
 <script>
-(function() {
 let searchTimer;
 
 function fetchProductPage(url) {
@@ -187,6 +186,5 @@ function attachDeleteHandlers() {
         }
     });
 }
-})();
 </script>
 @endpush

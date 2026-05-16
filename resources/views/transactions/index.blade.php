@@ -63,7 +63,6 @@
 
 @push('scripts')
 <script>
-(function() {
 let searchTimer;
 
 function fetchPage(url) {
@@ -143,6 +142,5 @@ function exportPdf() {
 }
 
 attachPaginationHandler();
-})();
 </script>
 @endpush

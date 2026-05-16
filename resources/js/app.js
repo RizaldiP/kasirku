@@ -1,6 +1,4 @@
-import '@hotwired/turbo'
-
-// Navbar mobile toggle (delegation survives Turbo body swaps)
+// Navbar mobile toggle (delegation)
 document.addEventListener('click', function (e) {
     var toggle = e.target.closest('#navbarToggle');
     if (toggle) {
@@ -75,12 +73,4 @@ document.addEventListener('click', function (e) {
     if (btn) {
         closeModal(btn.dataset.modalClose);
     }
-});
-
-// Destroy Chart.js instances before Turbo caches/replaces body
-document.addEventListener('turbo:before-cache', function () {
-    if (typeof Chart === 'undefined') return;
-    document.querySelectorAll('canvas').forEach(function (c) {
-        if (c.chart) { c.chart.destroy(); c.chart = null; }
-    });
 });
